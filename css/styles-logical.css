@@ -1,0 +1,248 @@
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+:root{ /*Cuando esta en forma de clase tiene mas peso que html cuando esta como una pseudoclase*/
+    /* Hace referencia al elemento más superior */
+    font-size: 16px;
+    --white30: white;
+    --white20: #A5A3A5;
+    --white10: #3A3539;
+}
+body{ /*El color se va a heredar*/
+    color: var(--white30);
+    background-color: #251F24;
+    font-family: 'Nunito', sans-serif;
+    /* margin-block: 100px; */
+    margin:0;
+    /* margin-block-start: 50px;
+    margin-block-end: 50px; */
+}
+a{
+    color: var(--white30);
+}
+h1, h2, h3{
+    font-weight: normal;
+}
+h1{
+    font-size: 60px;
+    margin-block-start: 64px;
+    margin-block-end: 16px;
+}
+.header{
+    position:sticky;
+    inset-block-start: 0;
+    inset-block-start: -45px;
+}
+.header-content{
+    position: relative;
+    inset-block-start: 65px;
+}
+header{
+    font-size: 14px;
+    color: var(--white20);
+    position: absolute;
+    /* top */
+    inset-block-start: 0px;
+    /* bottom */
+    /* inset-block-end:; */
+    /* left */
+    inset-inline-start:-208px;
+    /* right */
+    /* inset-inline-end:; */
+    inline-size: 188px;
+}
+header li {
+    margin-block-end: 16px;
+}
+header a{
+    color: var(--white20);
+    text-decoration: none;
+}
+header a:hover{
+    color: var(--white30);
+}
+h2{
+    font-size: 32px;
+    margin-block: 40px;
+    font-weight: 600;
+}
+h3{
+    font-size: 1.5em;
+    margin-block: 16px;
+}
+nav details summary{
+    font-weight: bold;
+}
+
+/* ol li:nth-child(even){
+    border: 1px solid red;
+} */
+pre{
+    background: var(--white10);
+    padding: 40px;
+    overflow: auto;
+    border-radius: 8px;
+    border: 10px solid red;
+    border-left: 5px solid blue;
+    border-inline-start: 5px solid white;
+    border-block-end: 20px solid pink;
+    border-inline-end: 5px solid green;
+    border-block-start-color: blue;
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    margin-block-end: 40px;
+    border-radius: 50px;
+}
+p{
+    color: var(--white20);
+}
+.hero{
+    background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+    /* background-image: linear-gradient(to top, rgba(255,255,255, 0.2),transparent ), url('../images/patron-1.png'); */
+    /* background-image: linear-gradient(to top, rgba(255,255,255, 0.2), red 10% ,transparent ), url('../images/patron-1.png'); */
+    /* background: url('../images/patron-1.png'); */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    height: 350px;
+}
+
+.section-content img{
+    margin-block-start: 40px;
+    display: block;
+    max-inline-size: 100%;
+    /* max-width: 100%; */
+}
+
+.section-content{
+    counter-reset: titleList;
+}
+.section-content h3{
+    counter-increment: titleList;
+}
+.section-content h3::before{
+    content: counter(titleList, decimal)'. ';
+    /* content: "-"counter(titleList, upper-roman) "-"; */
+}
+
+/* .section-content h3::after{
+    content: ''; Solo se utiliza en pseudo elementos
+    width: 32px;
+    height: 4px;
+    background: var(--white30);
+    display: inline-block;
+} */
+
+::selection{
+    background: rgba(0, 195, 255, 0.5);
+}
+
+hr{
+    margin-block: 40px;
+    border-color: rgba(97, 97, 97, 0.2)
+}
+.main{
+    /* border: 1px solid red ; */
+}
+.wrapper{
+    /* border: 1px solid yellow; */
+    max-inline-size: 902px ; /*Equivalente al ancho o width*/
+    /* block-size: 100px;Alto */
+    margin: auto;
+}
+.main-content{
+    padding-inline: 16px;
+    /* border: 1px solid blue; */
+}
+blockquote{
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background-color: var(--white10);
+    border-radius: 8px;
+    line-height: 32px;
+    font-size: 24px;
+    /* padding: 24px; */
+    padding-inline-end: 24px;
+    padding-inline-start: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
+
+}
+blockquote p{
+    color: var(--white30);
+}
+.main hr{
+    display: none;
+}
+.slider{
+    /* border: 1px solid red; */
+}
+.slider-container{
+    /* border: 1px solid purple; */
+    display: block;
+    overflow: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    font-size: 0;
+}
+.video{
+    margin: 0;
+    /* border: 1px solid blue; */
+    display: inline-block;
+    width:100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+.slider-bullet-list{
+    text-align: center;
+    margin-block-start: 10px;
+}
+.slider-bullet{
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    background: white;
+    border-radius: 50%;
+}
+.form input{ 
+    inline-size: 100%;
+    border: 1px solid var(--white30);
+    background-color: #251F24;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    color: var(--white30);
+    font-size: 16px;
+    display: block;
+    margin-block-end: 24px;
+}
+.form input[type="submit"]{
+    background-color: #157EFB;
+    border: none;
+}
+.form input::-webkit-input-placeholder{
+    color: var(--white20);
+}

@@ -1,0 +1,240 @@
+*{
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-regular.otf');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-italic.otf');
+    font-style: italic;
+    font-weight: 400;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-bold.otf');
+    font-style: normal;
+    font-weight: bold;
+}
+@font-face {
+    font-family: charter ;
+    src: url('../font/fonts/charter-bold-italic.otf');
+    font-style: italic;
+    font-weight: bold;
+}
+:root{ /*Cuando esta en forma de clase tiene mas peso que html cuando esta como una pseudoclase*/
+    /* Hace referencia al elemento más superior */
+    font-size: 16px;
+    --gray30: #212121;
+    --gray20: #212429;
+    --gray10: #616161;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{ /*El color se va a heredar*/
+    color: var(--gray30);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+a{
+    color: var(--gray30);
+}
+h1{
+    font-size: 60px;
+    margin-top: 64px;
+    margin-bottom: 16px;
+    /* border: 1px solid red; */
+    /* width: 400px;
+    height: 400px;
+    padding: 40px; */
+    /*margin-left: 10px;
+    margin-right: 10px; */
+    /* margin: top right bottom left */
+    /* margin: 64px 10px 16px 20px; */
+}
+/* h1 + p{
+    background: red;
+    margin-bottom: 64px;
+} */
+hr{
+    margin: 64px 0;
+}
+.header-content{
+    position: relative;
+}
+.header{
+    position: sticky;
+    top:0;
+}
+header{
+    font-size: 14px;
+    color: var(--gray10);
+    position:absolute; /*Se activan las propiedades top left bottom, right y z-index*/
+    top:64px;
+    left:-232px;
+    width: 188px;
+
+    
+    /* top: 200px; */
+    /* right:50px;
+    bottom:100px; */
+    /* background: red; */
+    /* position:absolute;
+    position:fixed;
+    position: sticky; */
+}
+header a{
+    /* --gray10: red; */
+    color: var(--gray10);
+    text-decoration: none;
+}
+header a:hover{
+    color: var(--gray30);
+}
+header li{
+    margin-bottom: 16px;
+}
+h2{
+    font-size: 32px;
+    margin: 64px 0 40px;
+    font-weight: normal;
+}
+h3{
+    font-size: 1.5em;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    font-weight: normal;
+    /* width: 200px; */
+    padding: 20px;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    background: white;
+}
+nav details summary{
+    font-weight: bold;
+    line-height: 24px;
+}
+
+/* ol li:nth-child(even){
+    border: 1px solid red;
+} */
+pre{
+    background: #FEC62E;
+    padding: 40px;
+    font-family: 'Roboto';
+    line-height: 24px;
+}
+blockquote{
+    margin: 32px 0;
+    padding-left: 16px;
+    font-size: 24px;
+    /* Propiedad resumida>
+    border: ancho, tipo de borde, color */
+    /* border: 10px solid red; */
+    border-left: 4px solid var(--gray30);
+    /* border-top: 0.5px solid pink; */
+    /* border-top-color:aqua; */
+    line-height: 24px;
+}
+blockquote span{
+    color: var(--gray10);
+}
+blockquote span::before{
+    /* pseudoelemento */
+    content: '-';
+}
+.main{
+    /* border: 1px solid red; */
+    /* background: purple; */
+
+}
+.wrapper{
+    width: 902px;
+    margin: auto;
+}
+.main-content{
+    background-color: white;
+    /* padding: 20px; */
+}
+.title{
+    /* background: red; */
+}
+.debug{
+    /* outline: 1px solid red; */
+    /* background: red; */
+    /* border: 1px solid red !important;
+    box-sizing: border-box; */
+    /* box-shadow: 0 0 20px red; */
+}
+
+/* .form{
+    font-size:0 ;
+}
+input{
+    padding: 10px 20px;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid red;
+} */
+.section-content{
+    margin-top: 64px;
+}
+.section-content:first-of-type{
+
+    margin:0;
+}
+.section-content + hr {
+    display: none;
+}
+.section-content ol li{
+    line-height: 24px;
+}
+.section-content ul li{
+    margin-bottom: 16px;
+}
+.hero{
+    background-image: linear-gradient(to top, rgba(255,255,255, 0.2),transparent ), url('../images/patron-1.png');
+    /* background-image: linear-gradient(to top, rgba(255,255,255, 0.2), red 10% ,transparent ), url('../images/patron-1.png'); */
+    /* background: url('../images/patron-1.png'); */
+    /* background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    height: 350px;
+}
+.section-content img{
+    margin-top: 40px;
+}
+
+.section-content{
+    counter-reset: titleList;
+}
+.section-content h3{
+    counter-increment: titleList;
+    /* background-color: red; */
+    padding-bottom: 8spx;
+}
+.section-content h3::before{
+    content: counter(titleList, decimal) '. ';
+    /* content: "-"counter(titleList, upper-roman) "-"; */
+}
+
+.section-content h3::after{
+    content: ''; /*Solo se utiliza en pseudo elementos*/
+    width: 80px;
+    height: 4px;
+    background: var(--gray30);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+::selection{
+    background: rgba(0, 195, 255, 0.5);
+}
